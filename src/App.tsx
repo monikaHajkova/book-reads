@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import 'reset-css'
+import Overview from './Home/components/Overview/Overview';
+import Books from './Library/components/Books/Books';
+import Navbar from './Shared/components/NavBar/NavBar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const navigation = {
+  brand: { name: "BookReads", to: "/" },
+  links: [
+    { name: "Home", to: "/home" },
+    { name: "Library", to: "/library" },
+  ]
 }
 
-export default App;
+export default class App extends Component {
+  public render() {
+    const { brand, links } = navigation;
+
+    return (
+      <div className="App">
+        <Navbar brand={brand} links={links} />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/home" element={<Overview />} />
+            <Route path="/library" element={<Books />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    );
+  }
+}
