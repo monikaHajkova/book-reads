@@ -70,9 +70,6 @@ const Navbar = (props: {
       <Brand href={brand.to}>{brand.name}</Brand>
       <Ul>
         <NavLinks />
-
-
-
       </Ul>
     </Nav >
   )
