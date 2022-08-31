@@ -1,7 +1,9 @@
 {
   "name": "book-reads",
   "version": "0.1.0",
-  "private": true,
+  "description": "React book site",
+  "author": "Monika Hajkova",
+  "license": "UNLICENSED",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
@@ -45,6 +47,10 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
-    "tslint-config-prettier": "^1.18.0"
+    "tslint-config-prettier": "^1.18.0",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "eslint": "^8.23.0",
+    "eslint-plugin-react": "^7.31.1"
   }
 }

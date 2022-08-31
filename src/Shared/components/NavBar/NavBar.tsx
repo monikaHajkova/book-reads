@@ -1,7 +1,5 @@
 import * as React from 'react'
-import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components'
-import Overview from '../../../Home/components/Overview/Overview';
 
 const Theme = {
   colors: {
@@ -64,6 +62,7 @@ const Navbar = (props: {
   links: Array<{ name: string, to: string }>
 }) => {
   const { brand, links } = props;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const NavLinks: any = () => links.map((link: { name: string, to: string }) => <Li key={link.name}><a href={link.to}>{link.name}</a></Li>);
   return (
     <Nav>
